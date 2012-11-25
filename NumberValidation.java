@@ -20,7 +20,7 @@ public class NumberValidation {
 	}
 	
 	public static void main(String args[]) {
-		Validation val = new Validation();
+		NumberValidation val = new NumberValidation();
 		boolean isNumber = val.isNumber("00");
 		if(isNumber == true) {
 			System.out.println("Is a number");
