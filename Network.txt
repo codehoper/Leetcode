@@ -7,7 +7,7 @@ Sharing a link : Multiplexing
 To combine multiple signals (analog or digital) for
 transmission over a single line or medium.
 
-E2E desing principle
+E2E (End to End) design principle
 Application-specific functions ought to reside in the end hosts of a network rather than in intermediary nodes – provided they can be implemented "completely and correctly" in the end hosts.
 
 Mux Technologies :
