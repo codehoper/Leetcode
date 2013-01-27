@@ -1,0 +1,3 @@
+Each BT has n+1 NULL pointers.
+(as leaf node have 2 null pointers after adding node to leaf node we have 3 pointers
+So ultimately 2 nodes(n) add to 3 NULL pointers(n+1)).
