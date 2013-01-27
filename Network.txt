@@ -1,3 +1,39 @@
+What happens when u try to connect from your home to internet
+DHCP
+Process:
+1.request encapsulated in UDP,then in IP, then in 802.1 Ethernet
+2.Ethernet frame broadcast to (dest: FFFFFFFFFFFF ) on LAN,
+3.received at router running DHCP server
+4.DHCP server formulates DHCP ACK with <Output>
+encapsulation at DHCP server, frame forwarded (switch learning) through
+LAN, demultiplexing at client.
+Output:
+1.IP address for self client
+2.name & addr of DNS server
+3.IP address of its first-hop router
+
+ARP
+Process:
+ARP query :
+broadcast,received by router.
+Output:
+ARP reply:
+MAC address of router interface.
+
+DNS
+Process :
+IP datagram routed in intranet (RIP, OSPF, IS-IS and/or BGP routing protocols)and internet
+Output :
+IP address of destination server
+
+TCP :
+Process:
+3 way hand shake to server
+Ouput : 
+connect to destination server 
+
+HTTP (req and reply)
+
 How to send data from end to end: two switching
 methods 
 Circuit switching (eg.ISDN)
