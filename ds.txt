@@ -1,0 +1,22 @@
+"Changing a data structure in a slow program can work the same way an organ transplant does in a sick patient."
+Steven Skiena
+classification of ds
+1.Contiguous and linked ds
+Contiguous ds : Contigous slabs of memory
+eg. array,heap,matrices and hashtables
+linked ds : distinct chunks of memory bound together by pointers.
+eg.list,trees,graph adjacency list
+
+The relative advantages of linked lists over static arrays include:
+• Overflow on linked structures can never occur unless the memory is actually full.
+• Insertions and deletions are simpler than for contiguous (array) lists.
+• With large records, moving pointers is easier and faster than moving the items themselves.
+while the relative advantages of arrays include:
+• Linked structures require extra space for storing pointer fields.
+• Linked lists do not allow efficient random access to items.
+• Arrays allow better memory locality and cache performance than random
+pointer jumping.
+memory locality : Physical continuity between successive data accesses helps to exploit the high speed cache memory on modern comp arch.
+2.Stack,Queue and Dictionaries
+permits storage and retrieval of data items independent of content. By contrast, dictionaries are abstract data types that retrieve based on key values or "content"
+

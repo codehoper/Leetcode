@@ -1,0 +1,1 @@
+word is 4 byte (consist of 4 letters ) -- for 32 bit arch
