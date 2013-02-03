@@ -1,0 +1,93 @@
+Note: breakpoint 1 also set at pc 0x80485f3.
+Breakpoint 2 at 0x80485f3: file linked_list.c, line 89.
+Breakpoint 3 at 0x804855a: file linked_list.c, line 55.
+Argument required (file name in which to save)
+Saved to file 'linked_bt1'.
+No stack.
+Note: breakpoint 3 also set at pc 0x804855a.
+Breakpoint 4 at 0x804855a: file linked_list.c, line 55.
+Starting program: /home/hduser/interview/linked_list 
+
+Breakpoint 1, main () at linked_list.c:89
+Continuing.
+
+Breakpoint 3, merge2_list (head1=0xbffff2a4, head2=0xbffff2a8) at linked_list.c:55
+Breakpoint 5 at 0x8048586: file linked_list.c, line 63.
+Breakpoint 6 at 0x80484f2: file linked_list.c, line 47.
+$1 = (node *) 0x804b068
+Continuing.
+[Inferior 1 (process 25782) exited with code 012]
+No stack.
+The program is not being run.
+The program is not being run.
+Undefined command: "linked_list".  Try "help".
+Starting program: /home/hduser/interview/linked_list linked_
+
+Breakpoint 1, main () at linked_list.c:89
+Continuing.
+
+Breakpoint 3, merge2_list (head1=0xbffff284, head2=0xbffff288) at linked_list.c:55
+Breakpoint 7 at 0x80485a8: file linked_list.c, line 69.
+$2 = (node *) 0x804b068
+Continuing.
+
+Breakpoint 7, merge2_list (head1=0xbffff284, head2=0xbffff288) at linked_list.c:69
+$3 = (node *) 0x804b048
+Breakpoint 8 at 0x80485be: file linked_list.c, line 74.
+Continuing.
+
+Breakpoint 7, merge2_list (head1=0xbffff284, head2=0xbffff288) at linked_list.c:69
+Continuing.
+
+Breakpoint 7, merge2_list (head1=0xbffff284, head2=0xbffff288) at linked_list.c:69
+Continuing.
+
+Breakpoint 8, merge2_list (head1=0xbffff284, head2=0xbffff288) at linked_list.c:74
+$4 = (node *) 0x804b008
+$5 = 7
+$6 = 4
+Breakpoint 9 at 0x80485d2: file linked_list.c, line 77.
+Continuing.
+
+Breakpoint 9, merge2_list (head1=0xbffff284, head2=0xbffff288) at linked_list.c:77
+Continuing.
+[Inferior 1 (process 25819) exited with code 012]
+Starting program: /home/hduser/interview/linked_list linked_list
+
+Breakpoint 1, main () at linked_list.c:89
+Continuing.
+
+Breakpoint 3, merge2_list (head1=0xbffff284, head2=0xbffff288) at linked_list.c:55
+Continuing.
+
+Breakpoint 7, merge2_list (head1=0xbffff284, head2=0xbffff288) at linked_list.c:69
+The program being debugged has been started already.
+Start it from the beginning? (y or n) Program not restarted.
+Breakpoint 10 at 0x8048596: file linked_list.c, line 67.
+Note: breakpoint 6 also set at pc 0x80484f2.
+Breakpoint 11 at 0x80484f2: file linked_list.c, line 47.
+Continuing.
+
+Breakpoint 7, merge2_list (head1=0xbffff284, head2=0xbffff288) at linked_list.c:69
+Continuing.
+
+Breakpoint 7, merge2_list (head1=0xbffff284, head2=0xbffff288) at linked_list.c:69
+Continuing.
+
+Breakpoint 8, merge2_list (head1=0xbffff284, head2=0xbffff288) at linked_list.c:74
+Continuing.
+
+Breakpoint 9, merge2_list (head1=0xbffff284, head2=0xbffff288) at linked_list.c:77
+Continuing.
+
+Breakpoint 9, merge2_list (head1=0xbffff284, head2=0xbffff288) at linked_list.c:77
+Continuing.
+
+Breakpoint 9, merge2_list (head1=0xbffff284, head2=0xbffff288) at linked_list.c:77
+Continuing.
+
+Breakpoint 9, merge2_list (head1=0xbffff284, head2=0xbffff288) at linked_list.c:77
+Continuing.
+[Inferior 1 (process 25866) exited with code 012]
+Undefined command: "cc".  Try "help".
+The program is not being run.

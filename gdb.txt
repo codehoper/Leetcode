@@ -1,0 +1,20 @@
+$16 = (node *) 0x804b028
+$17 = (struct sll *) 0x804b008
+$18 = (node *) 0x804b028
+$19 = (node **) 0x804b04c
+$20 = (struct sll **) 0x804b02c
+$21 = (struct sll **) 0x804b02c
+$22 = (struct sll **) 0x804b02c
+$23 = (node *) 0x804b028
+$24 = (node *) 0x804b078
+$25 = (struct sll *) 0x804b008
+$26 = (struct sll *) 0x804b058
+$27 = (node *) 0x804b028
+$28 = (node *) 0x804b078
+$29 = (struct sll *) 0x804b058
+$30 = (node *) 0x804b078
+A debugging session is active.
+
+	Inferior 1 [process 8924] will be killed.
+
+Quit anyway? (y or n) 
