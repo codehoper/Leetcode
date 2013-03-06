@@ -106,6 +106,25 @@ void information_storage()
  	*/
 }
 
+static void do_rev () {
+	unsigned int v = 219;     // input bits to be reversed
+	//print_bin(v);
+	unsigned int r = v; // r will be reversed bits of v; first get LSB of v
+	int s = sizeof(v) * 8 - 1; // extra shift needed at end
+	while(v) {
+		v >>= 1;		//TODO:Use this method for rotation (n rotation) n times or O.M. use left_shift | right_shift(K-n)
+					//K = total bits and n = no of rotation.
+		r <<= 1;
+		r |= v & 1;		//get only one bit of v every time/
+		s--;
+	}
+
+	r <<= s; // shift when v's highest bits are zero
+	printf("%d \n",r);
+	//print_bin(r);
+}
+
+
 int main() {
 	detect_endian1();	
 	int x = 10;
@@ -113,5 +132,6 @@ int main() {
 	swap_numbers(&x,&y);	
 	presentation();
 	count_no_of_ones(&y);
+	do_rev();	
 	return 0;
 }

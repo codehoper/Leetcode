@@ -29,7 +29,7 @@ public class MissingPositive {
         }
         len = len - cnt;
         int B[] ;
-        /max/create new array
+        //max/create new array
         if (len > max) {
              B = new int[lengthen + 1];
         } else {

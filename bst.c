@@ -20,21 +20,89 @@ void make_bst(bst **root,int data){
 	if(*root == 0) {
 		bst* temp_node = insert_node(data);
 		*root = temp_node;
-	}else if(temp->data < data) {
-		make_bst(&temp->left,data);	//semantics &(temp->left)
+	}else if(temp->data < data) {		//bigger data always go to right
+		make_bst(&temp->right,data);	//semantics &(temp->left)
 	}else {
-		make_bst(&temp->right,data);
+		make_bst(&temp->left,data);
 	}
 }
 
 void do_preorder(bst *root) {
 	if(root != 0) {
-		do_preorder(root->left);
 		printf("%d\t",root->data);
+		do_preorder(root->left);
 		do_preorder(root->right);
 	}
 }
 
+void do_inorder(bst *root) {
+	if(root != 0) {
+		do_inorder(root->left);
+		printf("%d\t",root->data);
+		do_inorder(root->right);
+	}
+}
+
+int max(int i,int j) {
+	if(i > j) {
+	 	return i;
+	}else {
+		return j;
+	}
+}
+
+/**
+ * find max height of the bst
+ * **/
+int findMaxHeight(bst *root) {
+	int rt = 0;
+	int lt = 0;
+	if(root == 0) {
+		return 1;	
+	}else {
+	    lt = findMaxHeight(root->left);
+	    rt = findMaxHeight(root->right);
+	   //The reason to add 1 is to just make sure that you have traversed from top
+	   //and you are 1 height below from the top.
+	    if(lt < rt) {
+		return rt+1;	
+	    }
+	    return lt+1;
+	}
+
+}
+
+void getkth_max(bst *root,int k) {
+	
+	if(root == 0 || k < 0)	{
+		return ;
+	}
+	//printf ("\n%d\t",k);
+	static int index = 0;  //to ensure between stack excution we get latest/updated value
+	getkth_max(root->left,k);
+	++index;
+	if( k == index) {
+		printf ("\nthe largest element =  %d\n",root->data);
+		//return root->data;
+	}
+	getkth_max(root->right,k);
+		
+}
+
+void getkth_max_1(bst *root,int* k) {
+	
+	if(root == 0 || *k < 0)	{
+		return 1;
+	}
+	getkth_max(root->left,*k);
+	-- (*k);
+	if( *k == 0) {
+		printf ("\nthe largest element =  %d\n",root->data);
+		return root->data;
+	}
+	getkth_max(root->right,*k);
+		
+}
 
 
 int main () {
@@ -44,6 +112,19 @@ int main () {
 	for (;i<7;i++) {
 		make_bst(&root,tree_bag[i]);	
 	}
+	printf ("Preorder : \t");
 	do_preorder(root);
 	printf("\n");
+	
+	printf ("Inorder : \t");
+	do_inorder(root);
+	printf("\n");
+
+	int ht;
+	ht = findMaxHeight(root);	
+	printf("the max height of the tree = %d\n",ht);
+
+	int no;
+	int k = 3;
+	getkth_max(root,k);
 }

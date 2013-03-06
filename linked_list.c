@@ -140,11 +140,70 @@ node* merge2_list_1(node *head1,node *head2) {
 
 }
 
+
+static void print_rev_ll(node** head_ref) {
+
+	node* curr = *head_ref;
+	node* next = 0;
+	node* prev = 0;
+
+	while(curr) {
+		
+		next = curr->next;	
+	        curr->next = prev;		
+		prev = curr;
+		curr = next;
+	}
+
+	*head_ref = prev;
+
+}
+
+static void delete_node(node **node_ref) {
+	
+	node * curr = *node_ref;
+	node *next = curr->next;
+	if(next != 0) {
+		curr->data = next->data;
+		curr->next = next->next;	
+	}
+	next = 0;
+	free(next);
+}
+
 //Y-Problem : solution to detect Y problem in linked list
 //Time complexity : O(n)
 
 //P-problem : Solution to detect P condition in linked list.
 //Time complexity : O(n)
+static void detect_cycle(node *head) {
+
+	int found_cycle = 0;
+	node *hare = head;		//Initially both run at same speed
+	node *tortoise = head;
+
+	while(hare) {
+		hare = hare->next;	//hare runs twice as tortoise
+		if(hare) {
+			hare = hare->next;
+			tortoise = tortoise->next;
+			if(hare == tortoise) {
+				found_cycle = 1;
+				break;
+			}
+		}
+
+	}
+
+	if(found_cycle == 1) {
+		printf("\nfound cycle \n");
+	}
+	else {
+		printf("\nnot found cycle \n");
+	}
+
+}
+
 
 
 int main() {
@@ -164,6 +223,11 @@ int main() {
 //	node *h = merge2_list_1(&head,&head2);
 	//node *h = MergeLists(head,head2);
 	//node* h = merge2_list_1(head,head2);
+	print_ll(h);
+	print_rev_ll(&h);
+	print_ll(h);
+	node *t = h->next->next;
+	delete_node(&t);
 	print_ll(h);
 		
 }

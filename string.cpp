@@ -16,7 +16,7 @@ int main() {
 	cout << "After dereferencing s="<< *s<<" s1=" << *s1 << endl; 
 	
 	string *tx = new string("Google");
-	string *ty = new string("LinkedIn");
+	string *ty = new string("Link\0edIn");
 	
 	tx = ty;
 	tx->at(0) = 'G';

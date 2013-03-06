@@ -8,6 +8,7 @@ public:
         if ( 0 == x%2 ) return true;
         return false;
     }
+   
     
     //RunTime : O(log n)
     double pow(double x, int n) {
@@ -29,4 +30,17 @@ public:
         
         return t;
     }
+
+   //optimized version with same complexity as pow();
+   double pow1(const double base,int n) {
+	 if(n == 0) return 1;
+	double ret;
+	 else if(n%2 == 0) {
+	 	ret = pow1(base,n/2);
+		return ret * ret;
+	 }else {
+	 	ret = pow1(base,(n-1)/2);
+		return base * ret * ret;
+	 }
+   }
 };
