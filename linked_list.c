@@ -1,3 +1,5 @@
+#include<stdio.h>
+#include<stdlib.h>
 
 typedef struct sll {
 	int data;
@@ -45,8 +47,12 @@ void print_ll(node *head){
 	
 }
 
-void swap_2nodes(){
 
+void do_swap1(node **h1,node **h2) {
+	
+	int temp = (*h1)->data;
+	(*h1)->data = (*h2)->data; 
+	(*h2)->data = temp;
 }
 
 void do_swap(node **h1,node **h2) {
@@ -140,6 +146,9 @@ node* merge2_list_1(node *head1,node *head2) {
 
 }
 
+/**
+ * Reverse linked list with using double pointer to head
+ * **/
 
 static void print_rev_ll(node** head_ref) {
 
@@ -159,11 +168,76 @@ static void print_rev_ll(node** head_ref) {
 
 }
 
+/**
+ *Reverse linked list with using single pointer
+ * 
+ * **/
+
+static node * print_rev_ll1(node *head) {
+	
+	node *next;
+	node *prev = 0;
+	next = head;	
+	
+	while(head) {
+		next = head->next;
+		head ->next = prev;
+		prev = head;
+		head = next;	
+	}
+ 	
+	return prev;
+
+}
+
+/**
+ * reverse list between m and n.
+ * Idea : just swap the data instead of modifying pointer
+ * This approach is problematic as we just swap 2 data items at a time.
+ * Given 1->2->3->4->5->NULL, m = 2 and n = 4,
+ * return 1->4->3->2->5->NULL.
+ * **/
+static node * reverse_ll_between(node* head,int m,int n) {
+
+	node *main_node = head;
+        int t = n-m;
+        int isRun = 0;
+        node *prev = 0;
+        node *temp = 0;
+        while(m != 0 && main_node != 0) {
+            prev = main_node;
+            main_node = main_node->next;
+            m--;
+        }
+        
+        if(m != 0 || main_node == 0) {
+            return head;
+        }
+        else {
+            while(main_node != 0 && t != 0) {
+                temp = main_node->next;
+		do_swap1(&temp,&main_node);	
+                //main_node->next = prev;
+                //prev = main_node;
+                main_node = temp;
+                t--;
+            }
+        }
+        
+      //print_ll(head); to verify entries are clearly swapped
+      return main_node;	
+}
+
+/**
+ * Delete current node in the linked list.
+ * **/
+
 static void delete_node(node **node_ref) {
 	
 	node * curr = *node_ref;
 	node *next = curr->next;
 	if(next != 0) {
+		//store next node information in the current node
 		curr->data = next->data;
 		curr->next = next->next;	
 	}
@@ -173,6 +247,48 @@ static void delete_node(node **node_ref) {
 
 //Y-Problem : solution to detect Y problem in linked list
 //Time complexity : O(n)
+static void detect_y_problem(node *head1,node *head2) {
+	
+	int l1;
+	int l2;
+	int drift;
+	node *temp2;
+	node *temp = head1;
+	while(head1 !=0) {
+		temp = temp->next;
+		l1++;
+	}
+	temp = head2;
+	while(head2 != 0) {
+		temp = temp->next;
+		l2++;
+	}
+	//calculate drift and traverse the distance upto drift point
+	drift = l1-l2;
+	if(drift < 0) {
+		drift = -drift;
+	}
+	
+	temp = head1;
+	temp2 = head2;	
+	while(drift != 0) {
+		if(l1 < l2) {
+			temp = temp->next;
+		}else {
+			temp2 = temp2->next;	
+		}
+		drift--;
+	}
+	while ( temp != 0 && temp2 != 0 ) {
+		if(temp == temp2) {
+			printf ("\nY detected \n");
+			break;
+		}
+		temp = temp->next;
+		temp2 = temp2->next;
+	}
+	
+}
 
 //P-problem : Solution to detect P condition in linked list.
 //Time complexity : O(n)
@@ -229,6 +345,12 @@ int main() {
 	node *t = h->next->next;
 	delete_node(&t);
 	print_ll(h);
-		
+	
+	printf (" \n reversing list ...\n");
+	node* h1 = print_rev_ll1(h);
+	print_ll(h1);
+
+	reverse_ll_between(h1,2,4);
+	print_ll(h1);
 }
 
