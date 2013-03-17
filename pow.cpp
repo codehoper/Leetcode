@@ -8,6 +8,12 @@ public:
         if ( 0 == x%2 ) return true;
         return false;
     }
+
+   bool is_even1(int x) {
+	if((x & 1) == 0) return true;
+	return false;
+
+   }
    
     
     //RunTime : O(log n)
