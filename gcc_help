@@ -1,0 +1,2 @@
+to list the gdb 
+gcc -g prog2.c -o prog2

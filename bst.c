@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<math.h>
 
 typedef struct node{
 	int data;
@@ -53,6 +54,8 @@ int max(int i,int j) {
 
 /**
  * find max height of the bst
+ * Always give unit cost to each node 
+ * 1.root 2.left 3.right
  * **/
 int findMaxHeight(bst *root) {
 	int rt = 0;
@@ -69,6 +72,18 @@ int findMaxHeight(bst *root) {
 	    }
 	    return lt+1;
 	}
+
+}
+
+
+int is_balanced(bst *root) {
+
+	if(root == 0)	return 0;
+	int lt = is_balanced(root->left);
+	int rt = is_balanced(root->right);
+	if (abs(lt - rt) > 1 || lt < 0 || rt < 0)
+		return 0;
+	return max(lt,rt) + 1;
 
 }
 
