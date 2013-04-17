@@ -15,6 +15,13 @@ int swap1(int &a,int &b) {
 	b = t;
 }
 
+//int swap2(int &a,int &b) {
+//	int t;
+//	t = *a;
+//	*a = *b;
+//	*b = t;
+//}
+
 int main() {
 
 	int a = 10;
@@ -31,5 +38,8 @@ int main() {
 	cout << "after swap 1\n";
 	cout << "a = "<< a << " b = "<< b << endl;
 	
+	//swap2(a,b);
+	//cout << "after swap 1\n";
+	//cout << "a = "<< a << " b = "<< b << endl;
 
 }
