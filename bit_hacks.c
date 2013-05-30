@@ -8,7 +8,7 @@
 
 
 void count_no_of_ones(int *x) {
-  int t = *x;	
+  	int t = *x;	
 	int count = 0;
 	while(t!=0) {
 		t &= (t-1);

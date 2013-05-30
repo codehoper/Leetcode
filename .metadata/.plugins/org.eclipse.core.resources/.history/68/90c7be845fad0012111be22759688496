@@ -1,0 +1,19 @@
+
+public class Test {
+
+
+    private int convertHextoInt(String str) {
+        char [] arr = str.toCharArray();
+        int len = arr.length;
+        int sum = 0;
+        for (int i= len-1;i>=0;i--) {
+          sum +=  (arr[i] - '0') * (16)^i
+        }
+        return (sum);
+    }
+    
+    
+    public static void main(String args[]) {
+    	
+    }
+}

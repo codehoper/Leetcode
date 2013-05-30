@@ -1,0 +1,21 @@
+
+public class Test {
+
+
+    private int convertHextoInt(String str) {
+    	str = str.toLowerCase();
+        char [] arr = str.toCharArray();
+        int len = arr.length;
+        int sum = 0;
+        for (int i= len-1;i>=0;i--) {
+          sum +=  (arr[i] - '0') * Math.pow(16, len-i-1);
+        }
+        return (sum);
+    }
+    
+    
+    public static void main(String args[]) {
+    	Test t = new Test();
+    	System.out.println("o/p = "+t.convertHextoInt("BEEF1"));
+    }
+}

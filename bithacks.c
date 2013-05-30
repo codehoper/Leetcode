@@ -61,13 +61,13 @@ void swap_numbers(int *x,int *y) {
  **/
 
 void detect_endian1() {
-	int word = 1;
-	char* byte = (char*)&word;
-	printf("byte[0]=%.2X\n",byte[0]); //first byte	
-	printf("byte[1]=%.2X\n",byte[1]); //second byte
-	printf("byte[0]=%.2X\n",*byte);
-	printf("byte[0]=%.2X\n",byte);
-	if(byte[0] == 1) {
+	short i = 0x0001;
+	char* mem_block = (char*)&i;
+	printf("byte[0]=%.2X\n",mem_block[0]); //first byte	
+	printf("byte[1]=%.2X\n",mem_block[1]); //second byte
+	printf("byte[0]=%.2X\n",*mem_block);
+	printf("byte[0]=%.2X\n",mem_block);
+	if(mem_block[0] == 1) {
 		printf("big endian \n");
 	} else {
 		printf("little endian \n");

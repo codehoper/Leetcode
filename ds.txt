@@ -20,3 +20,4 @@ memory locality : Physical continuity between successive data accesses helps to 
 2.Stack,Queue and Dictionaries
 permits storage and retrieval of data items independent of content. By contrast, dictionaries are abstract data types that retrieve based on key values or "content"
 
+Each object has 
