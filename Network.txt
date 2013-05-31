@@ -243,4 +243,12 @@ Prevent sender from overflowing receiver
 6.Congestion control
 General principles & How TCP does it
 
+AODV:
+Distance vector : count to infinity
+Link state : only link information sharing ,scalable
+AODV : Avoids count to infinity problem : 
+Count to infinity : takes infinte ammount of time to converge when topology chages or link breaks
+solution : use AODV that uses PREQ an RREP messges and PERROR when link breaks or topology changes
+Runs periodically 
+Unique seq number to avoid flodding of packets in network.
 
